@@ -1,18 +1,3 @@
-const express = require('express')
-
-const app = express();
+const app = require('./app')
 
 require('./database')
-
-// Initializations
-
-// Setings
-
-// Middlewears
-
-// Global variables
-
-// Routes
-
-// Static
-
