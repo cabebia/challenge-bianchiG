@@ -1,4 +1,6 @@
-new Posiciones({
+const { Schema, model } = require('mongoose');
+
+const PosicionesSchema = new Schema({
     posicion : { type: Number, require: true },
     club : { type: String, require: true },
     imagePath : { type: String, require: true },
@@ -12,3 +14,4 @@ new Posiciones({
     dg : { type: Number, require: true },
     puntos : { type: Number, require: true}
 })
+module.exports = model('posiciones', PosicionesSchema);

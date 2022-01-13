@@ -1,1 +1,31 @@
-<h1> Goleadores </h1>
+<thead class="bg-color">
+    <tr>
+        <th>Pos</th>
+        <th class="d-none-md">Jugador</th>
+        <th class="text-left">Equipo</th>
+        <th>Puntos</th>
+    </tr>
+</thead>
+{{#each goleadores}}
+    <tr>
+        <td class="bg-color">{{posicion}}</td>
+        <td class="d-none-md">{{jugador}}</td>
+
+        <td class="d-none-xl text-left">
+            {{addBar jugador}}
+            <i class="equipo">
+                <img src="{{imagePath}}">
+                <span class="d-none-xl">{{{trimString club}}}</span>
+            </i>
+        </td>
+
+        <td class="equipo d-none-md">
+            <img src="{{imagePath}}">
+            <span class="d-none-md">{{club}}</span>
+            <span class="d-none-xl">{{{trimString club}}}</span>
+        </td>
+
+        <td class="bg-color">{{puntos}}</td>
+    </tr>
+{{/each}}
+

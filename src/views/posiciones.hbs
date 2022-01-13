@@ -1,0 +1,33 @@
+<thead class="bg-color">
+    <tr>
+        <th>Pos</th>
+        <th>Equipo</th>
+        <th>PJ</th>
+        <th>PG</th>
+        <th>PE</th>
+        <th>PP</th>
+        <th class="d-none-md border_lr">GF</th>
+        <th class="d-none-md">GC</th>
+        <th class="d-none-md border_lr ">DG</th>
+        <th>Pts</th>
+    </tr>
+</thead>
+
+{{#each posiciones}}
+    <tr>
+        <td class="bg-color">{{posicion}}</td>
+        <td class="equipo">
+            <img src="{{imagePath}}">
+            <span class="d-none-md">{{club}}</span>
+            <span class="d-none-xl">{{{trimString club}}}</span>
+        </td>
+        <td class="bg-color">{{pj}}</td>
+        <td>{{pg}}</td>
+        <td>{{pe}}</td>
+        <td>{{pp}}</td>
+        <td class="d-none-md">{{gf}}</td>
+        <td class="d-none-md">{{gc}}</td>
+        <td class="d-none-md">{{dg}}</td>
+        <td class="bg-color">{{puntos}}</td>
+    </tr>
+{{/each}}
