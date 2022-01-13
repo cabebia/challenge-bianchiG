@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
     "pos": "nodemon src/posiciones.js",
-    "postinstall": "npm run build",
-    "build": "nodemon src/index.js"
+    "postinstall": "npm run start"
   },
   "keywords": [],
   "author": "",
