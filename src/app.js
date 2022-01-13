@@ -6,13 +6,10 @@ const app = express();
 
 const path = require('path');
 
-const Goleadores = require('./models/Goleadores');
-
-
-
 // Initializations
 
 // Setings
+
     // Ruta de vistas
     app.set('views', __dirname + '/views');
 
@@ -26,9 +23,14 @@ const Goleadores = require('./models/Goleadores');
         parcialsDir: path.join(app.get('views'), 'partials'),
         extname: '.hbs',
         helpers:{
+
+            // Utilizada por ambas vistas mobile para acortar los clubes
             trimString: function (passedString) {
+
                 let words = passedString.split(" ");
+
                 var theString = passedString;
+
                 if(words.length >= 2){
 
                     switch(passedString){
@@ -60,6 +62,8 @@ const Goleadores = require('./models/Goleadores');
                 }
                 return theString;
             },
+
+            // Utilizada por la vista mobile de goleadores
             addBar: function(passedString){
                 return passedString + " - "
             }
@@ -72,10 +76,12 @@ const Goleadores = require('./models/Goleadores');
 
 // Routes
 
-app.use(require('./routes/index.routes'));
+    //Indicamos donde se encuentra la carpeta del controlador de rutas
+    app.use(require('./routes/index.routes'));
 
 // Static
 
-app.use(express.static(__dirname + '/public'));
+    // Indicamos donde se encuentra la carpeta /public
+    app.use(express.static(__dirname + '/public'));
 
 module.exports = app;
